@@ -1,6 +1,6 @@
 {
-  "name": "cornerstone-tools-hurwa-line",
-  "version": "0.0.0-semantically-released",
+  "name": "cornerstone-tools-line",
+  "version": "1.0.0",
   "description": "Medical imaging tools for the Cornerstone library",
   "main": "./dist/cornerstoneTools.js",
   "keywords": [
@@ -9,12 +9,12 @@
     "imaging",
     "cornerstone"
   ],
-  "author": "https://github.com/chenyuzheng/cornerstone-tools-line#contributors",
+  "author": "",
   "homepage": "https://github.com/chenyuzheng/cornerstone-tools-line",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chenyuzheng/cornerstone-tools-line.git"
+    "url": "git+https://github.com/chenyuzheng/cornerstone-tools-line.git"
   },
   "engines": {
     "node": ">=8.16.0"

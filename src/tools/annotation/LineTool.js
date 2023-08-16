@@ -19,11 +19,11 @@ import getPixelSpacing from '../../util/getPixelSpacing';
 import throttle from '../../util/throttle';
 import { getModule } from '../../store/index';
 
-const logger = getLogger('tools:annotation:LengthTool');
+const logger = getLogger('tools:annotation:LineTool');
 
 /**
  * @public
- * @class LengthTool
+ * @class LineTool
  * @memberof Tools.Annotation
  * @classdesc Tool for measuring distances.
  * @extends Tools.Base.BaseAnnotationTool
@@ -136,7 +136,7 @@ export default class LineTool extends BaseAnnotationTool {
     const length = Math.sqrt(dx * dx + dy * dy);
 
     // Store the length inside the tool for outside access
-    data.length = length;
+    // data.length = length;
     data.invalidated = false;
   }
 
@@ -203,22 +203,22 @@ export default class LineTool extends BaseAnnotationTool {
           drawHandles(context, eventData, data.handles, handleOptions);
         }
 
-        if (!data.handles.textBox.hasMoved) {
-          const coords = {
-            x: Math.max(data.handles.start.x, data.handles.end.x),
-          };
-
-          // Depending on which handle has the largest x-value,
-          // Set the y-value for the text box
-          if (coords.x === data.handles.start.x) {
-            coords.y = data.handles.start.y;
-          } else {
-            coords.y = data.handles.end.y;
-          }
-
-          data.handles.textBox.x = coords.x;
-          data.handles.textBox.y = coords.y;
-        }
+        // if (!data.handles.textBox.hasMoved) {
+        //   const coords = {
+        //     x: Math.max(data.handles.start.x, data.handles.end.x),
+        //   };
+        //
+        //   // Depending on which handle has the largest x-value,
+        //   // Set the y-value for the text box
+        //   if (coords.x === data.handles.start.x) {
+        //     coords.y = data.handles.start.y;
+        //   } else {
+        //     coords.y = data.handles.end.y;
+        //   }
+        //
+        //   data.handles.textBox.x = coords.x;
+        //   data.handles.textBox.y = coords.y;
+        // }
 
         // Move the textbox slightly to the right and upwards
         // So that it sits beside the length tool handle
